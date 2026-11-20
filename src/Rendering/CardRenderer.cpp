@@ -7,7 +7,11 @@
 
 CardRenderer::CardRenderer() {
     spritesheet = LoadTexture("assets/cards_spritesheet.png");
-    shader = LoadShader(nullptr, "shaders/card_shader.fs");
+    #ifdef __EMSCRIPTEN__
+        shader = LoadShader(nullptr, "shaders/card_shader_web.fs");
+    #else
+        shader = LoadShader(nullptr, "shaders/card_shader.fs");
+    #endif
 
     if (!IsShaderValid(shader)) {
         std::cout << "Shader failed to load... \n";

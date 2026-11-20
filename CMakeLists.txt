@@ -33,6 +33,7 @@ if(EMSCRIPTEN)
     "-sALLOW_MEMORY_GROWTH=1"
     "--preload-file=${CMAKE_CURRENT_SOURCE_DIR}/assets@/assets"
     "--preload-file=${CMAKE_CURRENT_SOURCE_DIR}/shaders@/shaders"
+    "--shell-file=${CMAKE_CURRENT_SOURCE_DIR}/web/shell.html"
     )
 
 else()
